@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// import  notificationsContextProvider and make it as high order as possible by wrapping the entire app around it.
+import NotificationsContextProvider from './Notifications/NotificationsContextProvider';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NotificationsContextProvider>
+      <App />
+    </NotificationsContextProvider>
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
